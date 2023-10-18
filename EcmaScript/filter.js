@@ -18,4 +18,4 @@ const comentarioOK = comentarios.filter( c => {
     return c.exibe === true;
 })
 
-//console.log(comentarioOK);
+console.log(comentarioOK);
