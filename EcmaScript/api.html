@@ -10,33 +10,37 @@
     <script>
         const url = 'https://viacep.com.br/ws/02996180/json/';
 
-        //get
-        fetch(url)
-        .then( (resposta) => {
-            //objeto promise resolcido (headers, body, whatever)
-            return resposta.json(); //dados!
-        })
-        .then( (dados) => {
-            console.log(`
-            Endereco: ${dados.logradouro}
-            Cidade: ${dados.localidade}
-            Estado: ${dados.uf}
-            `)
-        })
-        .catch( (e) => {
-            console.log(`Deu ruim!`);
-        });
-
-        // .then((resp)=> { //promisse resolvida
-        //     console.log(resp);//objeto cheio de coisas
-        //     return resp.json();//retorna os dados
+        // //get antigo
+        // fetch(url)
+        // .then( (resposta) => {
+        //     //objeto promise resolcido (headers, body, whatever)
+        //     console.log(resposta);
+        //     return resposta.json(); //dados!
         // })
-        // .then((dados)=> {//os dados do corpo da promise
+        // .then( (dados) => {
         //     console.log(dados);
+        //     // console.log(`
+        //     // Endereco: ${dados.logradouro}
+        //     // Cidade: ${dados.localidade}
+        //     // Estado: ${dados.uf}
+        //     // `)
         // })
-        // .catch((e)=>{
-        //     console.log("Deu ruim!");
-        // })
+        // .catch( (e) => {
+        //     console.log(`Deu ruim!`);
+        // });
+
+        //outro exemplo, get moderno
+        async function chamarApi(endereco) {
+            try {
+                const promise = await fetch(endereco);
+                const dados = await promise.json();
+                console.log(dados);
+            } catch (e) {
+                console.log(`Deu ruim`);
+            }
+        }
+
+        chamarApi(url);
     </script>
 </body>
 </html>
