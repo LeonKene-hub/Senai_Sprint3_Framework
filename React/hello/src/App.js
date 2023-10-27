@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Title from './components/Title/Title';
+import CardEvento from './components/cardEvento/CardEvento';
+import Container from './components/Container/Container';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello World</h1>
+      <Title nome="Pedro" sobrenome="Alves" />
+      
+      <Container>
+        <CardEvento titulo="Almoço" paragrafo="uma boa e quentinha comida deliciosa" link="Bora comer!!" />
+        <CardEvento titulo="Almoço" paragrafo="uma boa e quentinha comida deliciosa" link="Bora comer!!" />
+        <CardEvento titulo="Almoço" paragrafo="uma boa e quentinha comida deliciosa" link="Bora comer!!" />
+        <CardEvento titulo="Almoço" paragrafo="uma boa e quentinha comida deliciosa" link="Bora comer!!" />
+        <CardEvento titulo="Almoço" paragrafo="uma boa e quentinha comida deliciosa" link="Bora comer!!" />
+        <CardEvento titulo="Almoço" paragrafo="uma boa e quentinha comida deliciosa" link="Bora comer!!" />
+      </Container>
     </div>
   );
 }
